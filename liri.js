@@ -2,13 +2,14 @@ require("dotenv").config();
 //requires all packages needed
 var keys = require("./keys.js");
 var request = require("request");
-require("node-spotify-api");
+var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 //storing the CLI arguments
 var firstArg = process.argv[2];
 var secondArg = process.argv[3];
 
 var arguments = "";
+console.log(spotify)
 //attaches multiple word arguments
 for (var i = 3; i < firstArg.length; i++) {
   if (i > 3 && i < firstArg.length) {
